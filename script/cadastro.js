@@ -9,15 +9,15 @@ async function cadastro(){
         let data = document.getElementById('data').value;
         let terms = document.getElementById('termos').checked ? 1 : 0;
 
-        // Checagem de termos
-        if (terms == 0) {
-            alert('Os termos precisam ser aceitos!');
+        // Checagem de campos
+        if (!name || !email || !cpf_cpnj || !password || !data) {
+            alert('Todos os campos são obrigatórios!\nPor favor, preencha todos os campos');
             return;
         }
 
-        // Chacagem de campos
-        if (!name || !email || !cpf_cpnj || !password || !data) {
-            alert('Todos os campos são obrigatórios!\nPor favor, preencha todos os campos');
+        // Checagem de termos
+        if (terms == 0) {
+            alert('Os termos precisam ser aceitos!');
             return;
         }
 
