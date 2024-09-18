@@ -16,24 +16,8 @@ async function cadastro(){
         }
 
         // Chacagem de campos
-        if (!name) {
-            alert('campo Nome é obrigatório!');
-            return;
-        }
-        if (!email) {
-            alert('campo Email é obrigatório!');
-            return;
-        }
-        if (!cpf_cnpj) {
-            alert('campo CPF ou CNPJ é obrigatório!');
-            return;
-        }
-        if (!password) {
-            alert('campo Senha é obrigatório!');
-            return;
-        }
-        if (!data) {
-            alert('Campo Data de Nascimento é obrigatório!');
+        if (!name || !email || !cpf_cpnj || !password || !data) {
+            alert('Todos os campos são obrigatórios!\nPor favor, preencha todos os campos');
             return;
         }
 
