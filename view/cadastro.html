@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Page Title</title>
+    <link rel='stylesheet' type='text/css' media='screen' href='../css/cadastro.css'>
+    <link rel="stylesheet" href="../media/mediaquery.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script src='../view/cadastro.html'></script>
+</head>
+<body>
+    <main>
+        <section id ="cadastro">
+            <div id="imagem">
+                
+            </div>
+            <div id="formulario">
+                <form>
+                    <h1>Cadastro</h1>
+                    <p>Seja Bem vindo(a). preencha o formulario para efetuar o cadastro.</p>
+                    <div class="campo">
+                        <span class="material-symbols-outlined">person</span>
+                        <label for="name">Nome: </label>
+                        <input type="text" name="name" id="name" placeholder="Seu Nome" autocomplete="nome" maxlength="50" required>
+                    </div>
+                    <div class="campo">
+                        <span class="material-symbols-outlined">mail</span>
+                        <label for="email">E-mail: </label>
+                        <input type="email" name="email" id="email" placeholder="Seu e-mail" autocomplete="email" maxlength="30" required>
+                    </div>
+                    <div class="campo">
+                        <span class="material-symbols-outlined">vpn_key</span>
+                        <label for="senha">Senha: </label>
+                        <input type="password" name="senha" id="senha" placeholder="Sua senha" autocomplete="current-password" required minlength="8" maxlength="20">>
+                    </div>
+                    <div class="campo">
+                        <span class="material-symbols-outlined">badge</span>
+                        <label for="cpf_cnpj">CPF / CNPJ: </label>
+                        <input type="text" name="cpf_cnpj" id="cpf_cnpj" placeholder="CPF / CNPJ" required minlength="11" maxlength="20">
+                    </div>
+                    <div class="campo">
+                        <span class="material-symbols-outlined">calendar_month</span>
+                        <label for="data">Data de Nascimento: </label>
+                        <input type="date" name="data" id="data">
+                    </div>
+                    <label for="termos">Termos </label>
+                    <input type="checkbox" name="termos" id="termos">
+                    <input type="button" value="Cadastre-se" onclick="cadastro()"/>
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

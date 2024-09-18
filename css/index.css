@@ -1,0 +1,161 @@
+@charset "UTF-8";
+
+:root {
+    --cor0: #ECBE2A;
+    --cor1: #435A73;
+    --cor2: #67E67B;
+    --cor3: #719176;
+    --cor4: #665F57;
+    --cor5: #5C5766;
+
+    --font-padao: Arial, Verdana, Helvetica, sans-serif;
+    --font-destaque: 'Bebas Neue', cursive;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: var(--font-padao);
+}
+
+a.externo::after {
+    content: '\1F517\00A0';
+}
+
+h1 {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: var(--cor0);
+}
+
+#Logo{
+    background-color: black;
+    border-radius: 0% 20% 20% 0%;
+}
+
+header {
+    display: flex;
+    min-height: 40px;
+    background-color: var(--cor1);
+    text-align: center;
+    align-items: center;
+}
+
+nav {
+    padding-top: 50px;
+}
+
+header > h1 {
+    color: white;
+    font-size: 3em;
+    font-family: var(--font-destaque);
+    margin-bottom: 20px;
+}
+
+
+header > p {
+    font-family: var(--font-padao);
+    font-size: 1.2em;
+    color: white;
+    max-width: 600px;
+    margin: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 30px;    
+}
+
+picture#Logo{
+    display: inline-block;
+    margin-left: 0px;
+    margin-top: 0px;
+}
+
+.primeiroBloco{
+    display:flex;
+    padding:5%;
+    gap:5%
+}
+
+.primeiroTexto{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+article {
+    background-image: url(../Imagens/Beige\ Illustrative\ Happy\ International\ Cat\ Day\ Banner.png); 
+    opacity: 1;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    
+    }
+
+main {
+
+    min-width: 300px;
+    max-width: 100%;
+    margin: auto;
+    background-color: white;
+}
+
+
+nav {
+    background-color: var(--cor1);
+    text-align: center;
+    height: 30px;
+}
+
+nav > a {
+    color:var(--cor0);
+    padding: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition-duration: 0.5s;
+}
+
+nav > a:hover {
+    background-color: var(--cor0);
+    color: var(--cor5);
+    border-radius: 5px;
+}
+
+main > h1 {
+    color: var(--cor5);
+}
+
+main p {
+    margin: 15px 0px;
+    text-align: justify;
+    text-indent: 30px;
+    line-height: 2em;
+    font-size: 1em;
+}
+
+main a:hover {
+    text-decoration: underline;
+    color:var(--cor4)
+}
+
+aside {
+    background-color: var(--cor1);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.274);
+    margin-bottom: 50px;
+}
+
+aside > ul {
+    list-style-type: '\2714\00A0\00A0';
+    list-style-position: inside;
+    columns: 2;
+}
+
+footer {
+    background-color: var(--cor1);
+    color: white;
+    text-align: center;
+    padding: 5px;
+}
