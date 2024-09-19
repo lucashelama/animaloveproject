@@ -56,7 +56,7 @@ async function cadastro(){
             };
 
             if (errorMessage == "cpf_cnpj invalid") {
-                alert("CPF/CPNJ Inválido");
+                alert("CPF/CNPJ Inválido");
             };
         };
     } catch (error) {
