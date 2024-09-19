@@ -52,11 +52,11 @@ async function cadastro(){
             };
 
             if (errorMessage.cpf_cnpj) {
-                alert("CPF já utilizado");
+                alert("CPF/CNPJ já utilizado");
             };
 
             if (errorMessage == "cpf_cnpj invalid") {
-                alert("CPF Inválido");
+                alert("CPF/CPNJ Inválido");
             };
         };
     } catch (error) {
