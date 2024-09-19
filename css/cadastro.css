@@ -6,7 +6,6 @@
 }
 
 
-
 main {
     position: relative;
     height: 100vh;
@@ -81,6 +80,7 @@ div.campo > span {
 
 div.campo > input {
     background-color: #83B7EF;
+    color: gray;
     font-size: 1em;
     width: calc(100% - 44.5px);
     height: 100%;
