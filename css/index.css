@@ -6,19 +6,23 @@
     --cor2: #67E67B;
     --cor3: #719176;
     --cor4: #665F57;
-    --cor5: #5C5766;
+    --cor5: #24303d;
 
     --font-padao: Arial, Verdana, Helvetica, sans-serif;
     --font-destaque: 'Bebas Neue', cursive;
 }
 
 * {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Adiciona box-sizing para melhor controle de largura/altura */
 }
 
 body {
     font-family: var(--font-padao);
+    display: flex; /* Usando flexbox para layout */
+    flex-direction: column; /* Organiza em coluna */
+    min-height: 100vh; /* Garante que o body ocupe 100% da altura da tela */
 }
 
 a.externo::after {
@@ -27,10 +31,11 @@ a.externo::after {
 
 h1 {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: var(--cor0);
+    color: var(--cor5);
     font-size: 50px;
+    padding-top: 125px;
+    text-align: center;
 }
-
 
 header {
     display: flex;
@@ -41,8 +46,8 @@ header {
 }
 
 nav {
-    padding-top: 50px;
     margin-left: 20px;
+    margin-top: 22px;
 }
 
 header > h1 {
@@ -58,26 +63,25 @@ header > p {
     color: white;
     max-width: 600px;
     margin: auto;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 0 20px; /* Simplificando o padding */
     margin-bottom: 30px;    
 }
 
-picture#Logo{
+picture#Logo {
     display: inline-block;
-    margin-left: 0px;
-    margin-top: 0px;
+    background-color: #24303d;
+    border-radius: 0% 20% 0% 0%;
 }
 
 nav {
     background-color: var(--cor1);
     text-align: center;
-    height: 30px;
+    height: 2px;
 }
 
 nav > a {
-    color:var(--cor0);
-    padding: 10px;
+    color: var(--cor0);
+    padding: 15px;
     text-decoration: none;
     font-weight: bold;
     transition-duration: 0.5s;
@@ -89,28 +93,20 @@ nav > a:hover {
     border-radius: 5px;
 }
 
-main{
-    display: block;
+main {
+    flex: 1;
     background-image: url(../Imagens/Beige_Illustrative_Happy_International_Cat_Day_Banner_Opaco_50.png);
-    height: 100vh;
-    width: 100vw;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
 }
-
-
-h1 {
-    padding-top: 50px;
-    color: var(--cor5);
-    text-align: center;
-}
-
 
 main p {
-    margin: 15px 0px;
+    margin: 15px 10px;
     text-align: center;
-    text-indent: 30px;
     line-height: 2em;
     font-size: 1em;
-
 }
 
 aside {
@@ -128,12 +124,10 @@ aside > ul {
 }
 
 footer {
-    display: block;
-    bottom: 0;
-    left: 0;
     width: 100%;
-    background-color: var(--cor1);
+    background-color: var(--cor5);
     color: white;
     text-align: center;
-    padding: 5px;
+    padding: 5px 0;
+    min-height: 20px;
 }
