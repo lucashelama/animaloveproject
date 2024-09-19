@@ -5,11 +5,7 @@
     box-sizing: border-box;
 }
 
-body, html {
-    background-color: #042A5B;
-    width: 100vw;
-    height: 100vh;
-}
+
 
 main {
     position: relative;
