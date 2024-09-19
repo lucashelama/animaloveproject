@@ -10,7 +10,7 @@ async function cadastro(){
         let terms = document.getElementById('termos').checked ? 1 : 0;
 
         // Checagem de campos
-        if (!name || !email || !cpf_cpnj || !password || !data) {
+        if (!name || !email || !cpf_cnpj || !password || !data) {
             alert('Todos os campos são obrigatórios!\nPor favor, preencha todos os campos');
             return;
         }
