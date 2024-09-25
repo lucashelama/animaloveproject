@@ -16,7 +16,7 @@ async function cadastro(){
         }
 
         // Checagem de termos
-        if (terms) {
+        if (!terms) {
             alert('Os termos precisam ser aceitos!');
             return;
         }
