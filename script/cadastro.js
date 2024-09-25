@@ -5,7 +5,7 @@ async function cadastro(){
         let name = document.getElementById('name').value;
         let email = document.getElementById('email').value;
         let cpf_cnpj = document.getElementById('cpf_cnpj').value;
-        let password = document.getElementById('senha').value;
+        let password = document.getElementById('password').value;
         let data = document.getElementById('data').value;
         let terms = document.getElementById('termos').checked ? 1 : 0;
 
@@ -16,7 +16,7 @@ async function cadastro(){
         }
 
         // Checagem de termos
-        if (terms == 0) {
+        if (terms) {
             alert('Os termos precisam ser aceitos!');
             return;
         }
