@@ -1,6 +1,9 @@
 const url = "https://go-wash-api.onrender.com/api/user";
 
 async function cadastro(){
+    const cadastroButton = document.getElementById('cadastro-button');
+    cadastroButton.disabled = true;
+
     try {
         let name = document.getElementById('name').value;
         let email = document.getElementById('email').value;
@@ -63,4 +66,5 @@ async function cadastro(){
         console.log("Erro na requisição:", error);
         alert("Erro inesperado. Tente novamente mais tarde.");
     };
+    cadastroButton.disabled = false;
 }

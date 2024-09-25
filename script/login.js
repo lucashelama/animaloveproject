@@ -1,8 +1,9 @@
 const url = "https://go-wash-api.onrender.com/api/login"
 
 async function login(){
-    const loginButton = document.getElementById('login');
+    const loginButton = document.getElementById('login-button');
     loginButton.disabled = true;
+
     try {
         let user = document.getElementById('user').value;
         let password = document.getElementById('password').value;
@@ -31,13 +32,12 @@ async function login(){
             window.location.replace("../index.html");
         } else{
             let errorData = await responseApi.json();
-            console.log(errorData)
             let errorMessage = errorData.data.errors;
-            alert(errorMessage)
+            alert(errorMessage);
         };
     } catch(error){
-        console.log("Erro na requisição:", error)
-        alert("Erro incesperado. Tente novamente mais tarde.")
-    }
+        console.log("Erro na requisição:", error);
+        alert("Erro incesperado. Tente novamente mais tarde.");
+    };
     loginButton.disabled = false;
 }
