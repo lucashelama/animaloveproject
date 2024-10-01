@@ -45,13 +45,14 @@ async function cadastro(){
             alert(data.data);
         } else {
             let errorData = await responseApi.json();
+            console.log(errorData)
 
             // Error Tratado
             let errorMessage = errorData.data.errors;
 
             // Tratamento de erros
             if (errorMessage.email) {
-                alert("E-mail já utilizado");
+                alert(errorData.data.errors);
             };
 
             if (errorMessage.cpf_cnpj) {
@@ -65,6 +66,7 @@ async function cadastro(){
     } catch (error) {
         console.log("Erro na requisição:", error);
         alert("Erro inesperado. Tente novamente mais tarde.");
-    };
-    cadastroButton.disabled = false;
+    } finally{
+        cadastroButton.disabled = false;
+    }
 }

@@ -26,10 +26,10 @@ async function login(){
         });
 
         if (responseApi.ok) {
-            // No momento vou manter o data, mesmo não usando ele
             let data = await responseApi.json();
+            localStorage.setItem('token', data.access_token);
             alert('Login feito com sucesso');
-            window.location.replace("../index.html");
+            window.location.replace("home.html");
         } else{
             let errorData = await responseApi.json();
             let errorMessage = errorData.data.errors;
@@ -37,7 +37,8 @@ async function login(){
         };
     } catch(error){
         console.log("Erro na requisição:", error);
-        alert("Erro incesperado. Tente novamente mais tarde.");
-    };
-    loginButton.disabled = false;
+        alert("Erro inesperado. Tente novamente mais tarde.");
+    } finally{
+        loginButton.disabled = false;
+    }    
 }
