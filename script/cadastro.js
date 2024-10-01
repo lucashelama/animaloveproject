@@ -45,23 +45,18 @@ async function cadastro(){
             alert(data.data);
         } else {
             let errorData = await responseApi.json();
-            console.log(errorData)
 
             // Error Tratado
             let errorMessage = errorData.data.errors;
-
-            // Tratamento de erros
-            if (errorMessage.email) {
-                alert(errorData.data.errors);
-            };
-
+            console.log(errorMessage)
+            
+            // Tratamento de erro do cpf
             if (errorMessage.cpf_cnpj) {
-                alert("CPF/CNPJ já utilizado");
+                alert(errorMessage.cpf_cnpj[0]);
+            } else {
+                alert(errorMessage);
             };
 
-            if (errorMessage == "cpf_cnpj invalid") {
-                alert("CPF/CNPJ Inválido");
-            };
         };
     } catch (error) {
         console.log("Erro na requisição:", error);

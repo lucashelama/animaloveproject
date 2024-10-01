@@ -40,5 +40,5 @@ async function login(){
         alert("Erro inesperado. Tente novamente mais tarde.");
     } finally{
         loginButton.disabled = false;
-    }    
+    }
 }
