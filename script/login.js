@@ -15,14 +15,14 @@ async function login(){
 
         let responseApi = await fetch(url, {
             method:"POST",
+            headers:{
+                'Content-Type':'application/json'
+            },
             body:JSON.stringify({
                 "email": user,
                 "password": password,
                 "user_type_id": 1
-            }),
-            headers:{
-                'Content-Type':'application/json'
-            }
+            })
         });
 
         if (responseApi.ok) {

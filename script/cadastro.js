@@ -26,6 +26,9 @@ async function cadastro(){
 
         let responseApi = await fetch(url,{
             method:"POST",
+            headers:{
+                'Content-Type':'application/json'
+            },
             body:JSON.stringify({
                 "name": name,
                 "email": email,
@@ -34,10 +37,7 @@ async function cadastro(){
                 "cpf_cnpj": cpf_cnpj,
                 "terms": terms,
                 "birthday": data
-            }),
-            headers:{
-                'Content-Type':'application/json'
-            }
+            })
         });
 
         if (responseApi.ok) {
