@@ -1,19 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
+    <meta charset='utf-8'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/login.css">
+    <link rel="stylesheet" href="../media/mediaquerylogin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <script src="../script/login.js"></script>
     <title>Login</title>
 </head>
 <body>
-    <label for="user">CPF/CNPJ ou E-mail:</label>
-    <input type="text" name="user" id="user"><br>
-
-    <label for="password">Senha:</label>
-    <input type="password" name="password" id="password"><br>
-
-    <input type="button" value="Login" onclick="login()" id="login-button"/>
+    <main>
+        <a href="../index.html"
+        style="background-color: #435A73; color: white; padding: 15px 32px; text-align: center; font-weight: bold; text-decoration: none; display:inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer; border: none; border-radius: 4px; transition: background-color 0.3s;" 
+        onmouseover="this.style.backgroundColor='#ECBE2A'" 
+        onmouseout="this.style.backgroundColor='#435A73'">
+        Voltar
+        </a>
+        <section id ="login">
+            <div id="imagem"></div>
+            <div id="formulario">
+                <form>
+                    <h1>Cadastro</h1>
+                    <p>Seja Bem vindo(a). preencha o formulario para efetuar o cadastro.</p>
+                    <div class="campo">
+                        <span class="material-symbols-outlined">mail</span>
+                        <label for="user">CPF/CNPJ ou E-mail: </label>
+                        <input type="text" name="user" id="user" placeholder="Seu CPF/CNPJ ou E-mail" autocomplete="email" maxlength="30" required>
+                    </div>
+                    <div class="campo">
+                        <span class="material-symbols-outlined">vpn_key</span>
+                        <label for="password">Senha: </label>
+                        <input type="password" name="password" id="password" placeholder="Sua senha" autocomplete="current-password" required minlength="8" maxlength="20">>
+                    </div>
+                    <input type="button" value="Login" onclick="login()" id="login-button"/>
+                    <a href="#" class="botao">
+                        Esqueci a senha <span class="material-symbols-outlined">mail</span>
+                    </a>
+                </form>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
