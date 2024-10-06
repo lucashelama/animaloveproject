@@ -1,133 +1,133 @@
-@charset "UTF-8";
-
-:root {
-    --cor0: #ECBE2A;
-    --cor1: #435A73;
-    --cor2: #67E67B;
-    --cor3: #719176;
-    --cor4: #665F57;
-    --cor5: #24303d;
-
-    --font-padao: Arial, Verdana, Helvetica, sans-serif;
-    --font-destaque: 'Bebas Neue', cursive;
-}
-
-* {
+*{
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Adiciona box-sizing para melhor controle de largura/altura */
+    font-family: 'Source Sans Pro',sans-serif;
+    box-sizing: border-box;
 }
-
-body {
-    font-family: var(--font-padao);
-    display: flex; /* Usando flexbox para layout */
-    flex-direction: column; /* Organiza em coluna */
-    min-height: 100vh; /* Garante que o body ocupe 100% da altura da tela */
+main{
+    color: #0000008c;
+    margin-bottom: 60px;
 }
-
-a.externo::after {
-    content: '\1F517\00A0';
+.container {
+    max-width: 1024px;
+    margin: 0 auto;
 }
-
-h1 {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: var(--cor5);
-    font-size: 50px;
-    padding-top: 125px;
+.box-texto{
     text-align: center;
+    margin: 0 auto;
+    max-width: 600px;
 }
-
-header {
-    display: flex;
-    min-height: 40px;
-    background-color: var(--cor1);
-    text-align: center;
-    align-items: center;
+.box-texto h2, h3, p{
+    padding-bottom: 20px;
 }
-
-nav {
-    margin-left: 20px;
-    margin-top: 22px;
+#sobre,
+#especialidades,
+#contato{
+    padding: 40px 20px 0;
 }
-
-header > h1 {
-    color: white;
-    font-size: 3em;
-    font-family: var(--font-destaque);
+.topo{
+    background-color: #00cad1;
     margin-bottom: 20px;
 }
-
-header > p {
-    font-family: var(--font-padao);
-    font-size: 1.2em;
-    color: white;
-    max-width: 600px;
-    margin: auto;
-    padding: 0 20px; /* Simplificando o padding */
-    margin-bottom: 30px;    
-}
-
-picture#Logo {
-    display: inline-block;
-    background-color: #24303d;
-    border-radius: 0% 20% 0% 0%;
-}
-
-nav {
-    background-color: var(--cor1);
-    text-align: center;
-    height: 2px;
-}
-
-nav > a {
-    color: var(--cor0);
-    padding: 15px;
+.topo a{
     text-decoration: none;
-    font-weight: bold;
-    transition-duration: 0.5s;
-}
-
-nav > a:hover {
-    background-color: var(--cor0);
-    color: var(--cor5);
-    border-radius: 5px;
-}
-
-main {
-    flex: 1;
-    background-image: url(../Imagens/Beige_Illustrative_Happy_International_Cat_Day_Banner_Opaco_50.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 100%;
-}
-
-main p {
-    margin: 15px 10px;
-    text-align: center;
-    line-height: 2em;
-    font-size: 1em;
-}
-
-aside {
-    background-color: var(--cor1);
+    color: #ffffff;
     padding: 10px;
-    border-radius: 10px;
-    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.274);
-    margin-bottom: 50px;
+    font-weight: 600;
 }
-
-aside > ul {
-    list-style-type: '\2714\00A0\00A0';
-    list-style-position: inside;
-    columns: 2;
+.topo a:hover{
+    color: #004b4c;
 }
-
-footer {
+.topo .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
-    background-color: var(--cor5);
-    color: white;
+    min-height: 60px;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+footer{
+    background-color: #0d6e71;
+    color: #fff;
+    padding: 20px;
+}
+footer .container{
     text-align: center;
-    padding: 5px 0;
-    min-height: 20px;
+}
+.box-apresentacao{
+    background-image: url('../Imagens/banner.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    width: 100%;
+    display: flex;
+}
+
+.box-apresentacao h1{
+    font-weight: 500;
+    font-size: 2.35rem;
+    margin:0;
+}
+.box-texto span{
+    font-weight: bold;
+}
+.box-sobre{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-sobre h3{
+    font-weight: 500;
+}
+.box-especialidades{
+    display: flex;
+    flex-wrap: wrap;
+}
+.box-especialidade{
+    border-radius: 3px;
+    box-shadow: 0px 1px 10px rgb(0 0 0 / 50%);
+    margin: 20px;
+    width: calc(100% / 3 - 40px);
+}
+.box-especialidade img{
+    width: 100%;
+}
+.box-especialidade figcaption{
+    text-align: center;
+    padding: 10px;
+}
+.box-especialidades-link a{
+    text-decoration: none;
+    color: #fff;
+    background-color: #00cad1;
+    font-weight: 600;
+    padding: 10px 20px;
+}
+
+.box-especialidades-link a:hover{
+    color: #004b4c
+}
+
+@media(max-width:425px){
+    body{
+        font-size: 1rem;
+        text-align: center;
+    }
+    .box-especialidade{
+        width: calc(100%);
+        align-items: center;
+    }
+}
+@media (max-width: 768px){
+    .box-especialidade figcaption{
+        font-size: 1.5rem;
+    }
+    .box-especialidade{
+        width: calc(100% - 20px);
+        margin: 10px;
+        align-items: center;
+    }
+    
 }
