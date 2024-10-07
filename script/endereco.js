@@ -1,6 +1,6 @@
 const url = 'https://go-wash-api.onrender.com/api/auth/address'
 
-async function endereco(){
+async function addEndereco(){
     const enderecoButton = document.getElementById('endereco-button');
     enderecoButton.disabled = true;
 
