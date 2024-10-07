@@ -25,11 +25,11 @@ async function cadastro(){
         }
 
         let responseApi = await fetch(url,{
-            method:"POST",
-            headers:{
+            method: "POST",
+            headers: {
                 'Content-Type':'application/json'
             },
-            body:JSON.stringify({
+            body: JSON.stringify({
                 "name": name,
                 "email": email,
                 "user_type_id": 1,
