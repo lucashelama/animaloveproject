@@ -1,6 +1,6 @@
-const url = 'https://go-wash-api.onrender.com/api/auth/address'
+const url = 'https://go-wash-api.onrender.com/api/auth/address';
 
-async function endereco(){
+async function endereco() {
     const enderecoButton = document.getElementById('endereco-button');
     enderecoButton.disabled = true;
 
@@ -8,8 +8,9 @@ async function endereco(){
         let title = document.getElementById('title').value;
         let cep = document.getElementById('cep').value.replace(/\D/g, '');
         let address = document.getElementById('address').value;
+        
         if (cep !== "") {
-            address = await completeAddress(cep)
+            address = await completeAddress(cep);
             if (!address) {
                 alert('CEP inválido');
                 return;
@@ -18,6 +19,7 @@ async function endereco(){
             alert('Campo CEP obrigatório');
             return;
         }
+
         let number = document.getElementById('number').value;
         let complement = document.getElementById('complement').value;
 
@@ -29,18 +31,17 @@ async function endereco(){
         let token = localStorage.getItem('token');
         if (!token) {
             alert('Você precisa fazer o login novamente para continuar com a operação');
-            window.location.replace("login.html")
+            window.location.replace("login.html");
             return;
         }
 
-        console.log(address)
         let responseApi = await fetch(url, {
-            method:"POST",
-            headers:{
-                'Authorization':`Bearer ${token}`,
-                'Content-Type':'application/json'
+            method: "POST",
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json'
             },
-            body:JSON.stringify({
+            body: JSON.stringify({
                 "title": title,
                 "cep": cep,
                 "address": address,
@@ -48,20 +49,16 @@ async function endereco(){
                 "complement": complement
             })
         });
-       
+
         if (responseApi.ok) {
             let data = await responseApi.json();
-            if (data.status) {
-                alert(data.status);
-                return;
-            };
-            console.log(data);
             alert('Endereço adicionado com sucesso!');
+            adicionarEnderecoNaLista({ title, cep, address, number, complement });
+            enderecoForm.reset();
             return;
         } else {
-            let errorData = await responseApi.json()
-            console.log(errorData)
-            alert(errorData.data.error)
+            let errorData = await responseApi.json();
+            alert(errorData.data.error);
         }
     } catch (error) {
         console.log("Erro na requisição:", error);
@@ -69,6 +66,16 @@ async function endereco(){
     } finally {
         enderecoButton.disabled = false;
     }
+}
+
+function adicionarEnderecoNaLista(endereco) {
+    const listaEnderecos = document.getElementById('listaEnderecos');
+    const li = document.createElement('li');
+    li.innerHTML = `
+        ${endereco.title}: ${endereco.address}, ${endereco.number} - ${endereco.cep} 
+        <button class="delete" onclick="deletarEndereco()">Deletar</button>
+    `;
+    listaEnderecos.appendChild(li);
 }
 
 async function formatarCep(input) {
@@ -83,16 +90,16 @@ async function formatarCep(input) {
             document.getElementById('address').value = address;
         };
     }
-};
+}
 
 async function completeAddress(cep) {
-    let cep_url = "https://brasilapi.com.br/api/cep/v2/" + cep
+    let cep_url = "https://brasilapi.com.br/api/cep/v2/" + cep;
     let response = await fetch(cep_url, {
-            method:"GET",
-            headers:{
-                'Content-Type':'application/json'
-            }}
-        )
+        method: "GET",
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
     if (response.ok) {
         let data = await response.json();
         return data.street;

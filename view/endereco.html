@@ -1,27 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src = "../script/endereco.js"></script>
-    <title>Endereços</title>
+    <title>Gerenciar Endereços</title>
+    <link rel="stylesheet" href="../css/endereco.css">
 </head>
 <body>
-    <label for="title">Titulo para endereço:</label>
-    <input type="text" name="title" id="title"><br>
+    <div class="container">
+        <h1>Gerenciar Endereços</h1>
 
-    <label for="cep">CEP:</label>
-    <input type="text" name="cep" id="cep" maxlength="9" oninput="formatarCep(this)"><br>
+        <!-- Formulário para cadastro de endereço -->
+        <form id="enderecoForm">
+            <label for="title">Título:</label>
+            <input type="text" id="title" name="title" required>
 
-    <label for="address">Endereço:</label>
-    <input type="text" name="address" id="address"><br>
+            <label for="cep">CEP:</label>
+            <input type="text" id="cep" name="cep" required oninput="formatarCep(this)">
 
-    <label for="number">Número:</label>
-    <input type="text" name="number" id="number"><br>
+            <label for="address">Endereço:</label>
+            <input type="text" id="address" name="address" readonly>
 
-    <label for="complement">Complemento:</label>
-    <input type="text" name="complement" id="complement"><br>
+            <label for="number">Número:</label>
+            <input type="text" id="number" name="number" required>
 
-    <input type="button" value="Cadastrar Endereço" onclick="endereco()" id="endereco-button">
+            <label for="complement">Complemento:</label>
+            <input type="text" id="complement" name="complement">
+
+            <button type="button" id="endereco-button" onclick="endereco()">Salvar Endereço</button>
+        </form>
+
+        <!-- Lista de endereços -->
+        <h2>Endereços Cadastrados</h2>
+        <ul id="listaEnderecos"></ul>
+    </div>
+
+    <script src="../script/endereco.js"></script>
 </body>
 </html>
