@@ -15,14 +15,14 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Adiciona box-sizing para melhor controle de largura/altura */
+    box-sizing: border-box; 
 }
 
 body {
     font-family: var(--font-padao);
-    display: flex; /* Usando flexbox para layout */
-    flex-direction: column; /* Organiza em coluna */
-    min-height: 100vh; /* Garante que o body ocupe 100% da altura da tela */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
 }
 
 a.externo::after {
@@ -63,7 +63,7 @@ header > p {
     color: white;
     max-width: 600px;
     margin: auto;
-    padding: 0 20px; /* Simplificando o padding */
+    padding: 0 20px;
     margin-bottom: 30px;    
 }
 
