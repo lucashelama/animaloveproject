@@ -27,22 +27,22 @@
                     <div class="campo">
                         <span class="material-symbols-outlined">person</span>
                         <label for="name">Nome: </label>
-                        <input type="text" name="name" id="name" placeholder="Seu Nome" autocomplete="nome" maxlength="50" required>
+                        <input type="text" name="name" id="name" placeholder="Seu Nome" autocomplete="nome">
                     </div>
                     <div class="campo">
                         <span class="material-symbols-outlined">mail</span>
                         <label for="email">E-mail: </label>
-                        <input type="email" name="email" id="email" placeholder="Seu e-mail" autocomplete="email" maxlength="30" required>
+                        <input type="email" name="email" id="email" placeholder="Seu e-mail" autocomplete="email">
                     </div>
                     <div class="campo">
                         <span class="material-symbols-outlined">vpn_key</span>
                         <label for="password">Senha: </label>
-                        <input type="password" name="password" id="password" placeholder="Sua senha" autocomplete="current-password" required minlength="8" maxlength="20">>
+                        <input type="password" name="password" id="password" placeholder="Sua senha" autocomplete="current-password" minlength="8">>
                     </div>
                     <div class="campo">
                         <span class="material-symbols-outlined">badge</span>
                         <label for="cpf_cnpj">CPF / CNPJ: </label>
-                        <input type="text" name="cpf_cnpj" id="cpf_cnpj" placeholder="CPF / CNPJ" required minlength="11" maxlength="20">
+                        <input type="text" name="cpf_cnpj" id="cpf_cnpj" placeholder="CPF / CNPJ" minlength="11" maxlength="19" oninput="fomatarCPFCNPJ(this)">
                     </div>
                     <div class="campo">
                         <span class="material-symbols-outlined">calendar_month</span>

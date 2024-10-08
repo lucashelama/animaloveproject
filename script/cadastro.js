@@ -7,7 +7,7 @@ async function cadastro(){
     try {
         let name = document.getElementById('name').value;
         let email = document.getElementById('email').value;
-        let cpf_cnpj = document.getElementById('cpf_cnpj').value;
+        let cpf_cnpj = document.getElementById('cpf_cnpj').value.replace(/\D/g, '');
         let password = document.getElementById('password').value;
         let data = document.getElementById('data').value;
         let terms = document.getElementById('termos').checked ? 1 : 0;
@@ -25,11 +25,11 @@ async function cadastro(){
         }
 
         let responseApi = await fetch(url,{
-            method:"POST",
-            headers:{
+            method: "POST",
+            headers: {
                 'Content-Type':'application/json'
             },
-            body:JSON.stringify({
+            body: JSON.stringify({
                 "name": name,
                 "email": email,
                 "user_type_id": 1,
@@ -64,4 +64,17 @@ async function cadastro(){
     } finally{
         cadastroButton.disabled = false;
     }
+}
+
+async function fomatarCPFCNPJ(input) {
+    let cpf_cnpj = input.value.replace(/\D/g, '');
+
+    if (cpf_cnpj.length === 11) {
+        cpf_cnpj = cpf_cnpj.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
+        console.log(cpf_cnpj)
+    } else if (cpf_cnpj.length === 14) {
+            cpf_cnpj = cpf_cnpj.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, '$1.$2.$3/$4-$5');
+            console.log(cpf_cnpj)
+    }
+    input.value = cpf_cnpj;
 }

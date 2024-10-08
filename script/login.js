@@ -14,11 +14,11 @@ async function login(){
         };
 
         let responseApi = await fetch(url, {
-            method:"POST",
-            headers:{
+            method: "POST",
+            headers: {
                 'Content-Type':'application/json'
             },
-            body:JSON.stringify({
+            body: JSON.stringify({
                 "email": user,
                 "password": password,
                 "user_type_id": 1
@@ -32,8 +32,7 @@ async function login(){
             window.location.replace("endereco.html");
         } else{
             let errorData = await responseApi.json();
-            let errorMessage = errorData.data.errors;
-            alert(errorMessage);
+            alert(errorData.data.errors);
         };
     } catch(error){
         console.log("Erro na requisição:", error);
