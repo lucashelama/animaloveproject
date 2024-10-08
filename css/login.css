@@ -6,9 +6,9 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-image: url(../Imagens/Beige_Illustrative_Happy_International_Cat_Day_Banner_Opaco_50.png);
+    background-image: url(../Imagens/banner.png);
     background-size: cover;
-    background-position: center;
+    background-position: right;
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
