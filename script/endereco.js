@@ -97,7 +97,13 @@ async function getEndereco() {
 
         if (responseApi.ok) {
             let data = await responseApi.json();
-            console.log(data)
+            const listaEnderecos = document.getElementById('listaEnderecos');
+            listaEnderecos.innerHTML = '';
+            for (let i = 0; i < data.data.length; i++) {
+                let endereco = data.data[i];
+                console.log(endereco)
+                adicionarEnderecoNaLista(endereco);
+            };
         } else {
             let errorData = await responseApi.json();
             alert(errorData.data.errors)
