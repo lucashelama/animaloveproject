@@ -1,39 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src = "../script/endereco.js"></script>
-    <title>Endereços</title>
+    <title>Gerenciar Endereços</title>
+    <link rel="stylesheet" href="../css/endereco.css">
 </head>
 <body>
-    <label for="title">Titulo para endereço:</label>
-    <input type="text" name="title" id="title"><br>
+    <div class="container">
+        <h1>Gerenciar Endereços</h1>
 
-    <label for="cep">CEP:</label>
-    <input type="text" name="cep" id="cep" maxlength="9" oninput="formatarCep(this)"><br>
+        <form id="enderecoForm">
+            <label for="title">Título:</label>
+            <input type="text" id="title" name="title" required>
 
-    <label for="address">Endereço:</label>
-    <input type="text" name="address" id="address"><br>
+            <label for="cep">CEP:</label>
+            <input type="text" id="cep" name="cep" required oninput="formatarCep(this)">
 
-    <label for="number">Número:</label>
-    <input type="text" name="number" id="number"><br>
+            <label for="address">Endereço:</label>
+            <input type="text" id="address" name="address" readonly>
 
-    <label for="complement">Complemento:</label>
-    <input type="text" name="complement" id="complement"><br>
+            <label for="number">Número:</label>
+            <input type="text" id="number" name="number" required>
 
-    <input type="button" value="Cadastrar Endereço" onclick="addEndereco()" id="endereco-button"><br><br><br><br>
+            <label for="complement">Complemento:</label>
+            <input type="text" id="complement" name="complement">
 
-    
-    <label for="index">index teste</label>
-    <input type="number" name="index" id="index">
-    <input type="button" value="Teste API del" onclick="delEndereco()" id="endereco-del"><br><br>
+            <button type="button" id="endereco-button" onclick="endereco()">Salvar Endereço</button>
+        </form>
 
-    <input type="button" value="Teste API get" onclick="getEndereco()" id="endereco-get"><br><br>
+        <h2>Endereços Cadastrados</h2>
+        <ul id="listaEnderecos"></ul>
+    </div>
 
-
-    <label for="index-put">index teste put</label>
-    <input type="number" name="index-put" id="index-put">
-    <input type="button" value="Teste API put" onclick="putEndereco()" id="endereco-put">
+    <script src="../script/endereco.js"></script>
 </body>
 </html>

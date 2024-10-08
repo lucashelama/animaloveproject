@@ -3,29 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../animaloveproject/css/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap">
     <title>AnimaLove</title>
-    <link rel="stylesheet" href="css/index.css">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <header>
-        <picture id="Logo">
-            <img src="Imagens/Orange_Illustrative_Pet_House_Logo_Transparente.png" alt="Imagem">
-        </picture>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="./view/login.html">Login</a>
-            <a href="#">Agendamentos</a>
-            <a href="#">Fale Conosco</a>
-            <a href="view/cadastro.html">Cadastre-se</a>
-        </nav>
+    <header class="topo">
+        <div class="container">
+            <div>
+                <img src="../animaloveproject/Imagens/Orange_Illustrative_Pet_House_Logo_Transparente.png" alt="Clínica Médica Life" title="Clínica Médica Life">
+            </div>
+            <nav class="topo-links">
+                <a href="#sobre">Sobre</a>
+                <a href="#">Agendamentos</a>
+                <a href="../animaloveproject/view/login.html">Login</a>
+                <a href="view/cadastro.html">Cadastre-se</a>
+            </nav>
+        </div>
     </header>
     <main>
-        <h1>O seu Pet vai amar Você pra sempre!</h1>
-        <p>Na AnimaLove, sabemos o quanto seus animais de estimação significam para você. É por isso que estamos dedicados a fornecer cuidados veterinários excepcionais com um toque de carinho e atenção. Nossa missão é garantir que seu amigo de quatro patas tenha uma vida saudável e feliz ao seu lado.</p>
+        <section class="box-apresentacao">
+        </section>
+        <section id="sobre" class="container">
+            <div class="box-texto">
+                <h2>Bem-vindo à AnimaLove</h2>
+                <h3>Cuidando do seu melhor amigo com amor e excelência.</h3>
+                <p>Na AnimaLove, sabemos o quanto seu animal de estimação é importante para você. Nossa missão é oferecer cuidados veterinários de alta qualidade,
+                    com uma equipe dedicada e apaixonada por cuidar da saúde e bem-estar dos animais.</p>
+            </div>
+            <div class="box-sobre">
+                <img src="../animaloveproject/Imagens/Veterinary-bro 250 x 250.png" alr="Imagem de um médico" title="Imagem de um médico">
+                <div>
+                    <h3>AQUI NA NOSSA CLÍNICA VOCÊ VAI ENCONTRAR:</h3>
+                    <ul>
+                        <li><strong>Emergências 24h.</strong></li>
+                        <p>Sabemos que imprevistos acontecem. Nossa clínica oferece atendimento de emergência 24 horas, com uma equipe preparada para agir com rapidez e eficiência.</p>
+                        <li><strong>Consultas Veterinárias.</strong></li>
+                        <p>Realizamos consultas de rotina e atendimentos especializados, com um foco no diagnóstico preciso e no acompanhamento contínuo para garantir a saúde de seu pet.</p>
+                        <li><strong>Vacinação.</strong></li>
+                        <p>Manter seu pet protegido é fundamental. Oferecemos um programa completo de vacinação, garantindo que ele esteja sempre imunizado contra doenças.</p>
+                        <li><strong>Exames Laboratoriais.</strong></li>
+                        <p>Contamos com laboratório próprio, proporcionando rapidez e precisão nos resultados de exames, como hemogramas, bioquímicos e mais.</p>
+                        <li><strong>Cirurgias.</strong></li>
+                        <p>Realizamos cirurgias de pequeno e médio porte, com equipamentos modernos e uma equipe especializada. Cuidamos de todas as etapas, desde o pré até o pós-operatório, garantindo o conforto e a segurança do seu pet.</p>
+                        <li><strong>Internação.</strong></li>
+                        <p>Temos uma estrutura completa para internação, com cuidados 24 horas, acompanhamento veterinário e todo o conforto que seu pet merece durante a recuperação.</p>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="especialidades" class="container">
+            <div class="box-texto">
+                <h2>Nossos Serviços</h2>
+                <p>Nossa clínica possui diversas especialidades. Como ortopedia, oncologia, fisioterapia, neurologia,
+                    cardiologia, odontologia e outros</p>
+            </div>
+            <div class="box-especialidades">
+                <figure class="box-especialidade">
+                    <img src="../animaloveproject/Imagens/fisioterapia.png" alt="Foto médico ortopedista">
+                    <figcaption>FISIOTERAPIA</figcaption>
+                </figure>
+                <figure class="box-especialidade">
+                    <img src="../animaloveproject/Imagens/cardiologia.jpg" alt="Foto médica pediatra">
+                    <figcaption>CARDIOLOGIA</figcaption>
+                </figure>
+                <figure class="box-especialidade">
+                    <img src="../animaloveproject/Imagens/layer-odontologia.jpg" alt="Foto médica geriatra">
+                    <figcaption>ODONTOLOGIA</figcaption>
+                </figure>
+            </div>
+        </section>
     </main>
-    <footer>
-        © 2024 AnimaLove. Todos os direitos reservados.
-    </footer>
 </body>
+<footer>
+    <div class="container">
+        <img src="imagens/Orange_Illustrative_Pet_House_Logo_Transparente.png" alt="logo">
+        <p>Telefone e WhatsApp: (21)99999-5555</p>
+        <p>©2024 Clínica Veterinaria AnimaLove - Todos os direitos reservados</p>
+    </div>
+</footer>
+
 </html>

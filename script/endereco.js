@@ -1,4 +1,4 @@
-const url = 'https://go-wash-api.onrender.com/api/auth/address'
+const url = 'https://go-wash-api.onrender.com/api/auth/address';
 
 async function addEndereco(){
     let enderecoButton = document.getElementById('endereco-button');
@@ -8,8 +8,9 @@ async function addEndereco(){
         let title = document.getElementById('title').value;
         let cep = document.getElementById('cep').value.replace(/\D/g, '');
         let address = document.getElementById('address').value;
+        
         if (cep !== "") {
-            address = await completeAddress(cep)
+            address = await completeAddress(cep);
             if (!address) {
                 alert('CEP inválido');
                 return;
@@ -18,6 +19,7 @@ async function addEndereco(){
             alert('Campo CEP obrigatório');
             return;
         }
+
         let number = document.getElementById('number').value;
         let complement = document.getElementById('complement').value;
 
@@ -31,7 +33,6 @@ async function addEndereco(){
             return;
         }
 
-        console.log(address)
         let responseApi = await fetch(url, {
             method: "POST",
             headers: {
@@ -49,17 +50,13 @@ async function addEndereco(){
 
         if (responseApi.ok) {
             let data = await responseApi.json();
-            if (data.status) {
-                alert(data.status);
-                return;
-            };
-            console.log(data);
             alert('Endereço adicionado com sucesso!');
+            adicionarEnderecoNaLista({ title, cep, address, number, complement });
+            enderecoForm.reset();
             return;
         } else {
-            let errorData = await responseApi.json()
-            console.log(errorData)
-            alert(errorData.data.error)
+            let errorData = await responseApi.json();
+            alert(errorData.data.error);
         }
     } catch (error) {
         console.log("Erro na requisição:", error);
@@ -67,6 +64,15 @@ async function addEndereco(){
     } finally {
         enderecoButton.disabled = false;
     }
+}
+
+function adicionarEnderecoNaLista(endereco) {
+    const listaEnderecos = document.getElementById('listaEnderecos');
+    const li = document.createElement('li');
+    li.innerHTML = `
+        ${endereco.title}: ${endereco.address}, ${endereco.number} - ${endereco.cep} 
+        <button class="delete" onclick="deletarEndereco()">Deletar</button>`;
+    listaEnderecos.appendChild(li);
 }
 
 async function getEndereco() {
@@ -219,7 +225,7 @@ async function formatarCep(input) {
             document.getElementById('address').value = address;
         };
     }
-};
+}
 
 async function completeAddress(cep) {
     let cep_url = "https://brasilapi.com.br/api/cep/v1/" + cep
