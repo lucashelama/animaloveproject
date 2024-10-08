@@ -51,8 +51,8 @@ async function addEndereco(){
         if (responseApi.ok) {
             let data = await responseApi.json();
             alert('Endereço adicionado com sucesso!');
-            adicionarEnderecoNaLista({ title, cep, address, number, complement });
-            enderecoForm.reset();
+            // getEndereco();
+            window.location.replace("../index.html");
             return;
         } else {
             let errorData = await responseApi.json();
@@ -66,19 +66,9 @@ async function addEndereco(){
     }
 }
 
-function adicionarEnderecoNaLista(endereco) {
-    const listaEnderecos = document.getElementById('listaEnderecos');
-    const li = document.createElement('li');
-    li.innerHTML = `
-        ${endereco.title}: ${endereco.address}, ${endereco.number} - ${endereco.cep} 
-        <button class="delete" onclick="deletarEndereco()">Deletar</button>`;
-    listaEnderecos.appendChild(li);
-}
-
 async function getEndereco() {
     let enderecoButton = document.getElementById('endereco-get');
     enderecoButton.disabled = true;
-
     try {
         let token = await getToken()
         if (!token) {
@@ -93,21 +83,12 @@ async function getEndereco() {
             }
         })
 
-        console.log(responseApi)
-
         if (responseApi.ok) {
             let data = await responseApi.json();
-            const listaEnderecos = document.getElementById('listaEnderecos');
-            listaEnderecos.innerHTML = '';
-            for (let i = 0; i < data.data.length; i++) {
-                let endereco = data.data[i];
-                console.log(endereco)
-                adicionarEnderecoNaLista(endereco);
-            };
+            adicionarEnderecoNaLista(data.data);
         } else {
             let errorData = await responseApi.json();
             alert(errorData.data.errors)
-            console.log(errorData)
         }
     } catch (error) {
         console.log("Erro na requisição:", error);
@@ -206,8 +187,6 @@ async function putEndereco() {
     }
 }
 
-
-
 async function getToken() {
     let token = localStorage.getItem('token');
 
@@ -247,4 +226,18 @@ async function completeAddress(cep) {
     } else {
         return null;
     }
+}
+
+function adicionarEnderecoNaLista(enderecos) {
+    const listaEnderecos = document.getElementById('listaEnderecos');
+    
+    listaEnderecos.innerHTML = '';
+    for (let i = 0; i < enderecos.length; i++) {
+        let endereco = enderecos[i];
+        const li = document.createElement('li');
+        li.innerHTML = `
+        ${endereco.title}: ${endereco.address}, ${endereco.number} - ${endereco.cep} 
+        <button class="delete" onclick="deletarEndereco()">Deletar</button>`;
+        listaEnderecos.appendChild(li);
+    };
 }
