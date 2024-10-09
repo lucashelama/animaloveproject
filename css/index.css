@@ -8,10 +8,13 @@ main{
     color: #0000008c;
     margin-bottom: 60px;
 }
-.container {
-    max-width: 1024px;
-    margin: 0 auto;
+
+img#logo {
+    
+    background-color: #24303d;
+    border-radius: 0% 20% 0% 0%;
 }
+
 .box-texto{
     text-align: center;
     margin: 0 auto;
@@ -20,41 +23,50 @@ main{
 .box-texto h2, h3, p{
     padding-bottom: 20px;
 }
+
 #sobre,
 #especialidades,
 #contato{
     padding: 40px 20px 0;
 }
+
 .topo{
-    background-color: #00cad1;
+    background-color: #435A73;
     margin-bottom: 20px;
 }
+
 .topo a{
+    color: #ECBE2A;
+    padding: 15px;
     text-decoration: none;
-    color: #ffffff;
-    padding: 10px;
-    font-weight: 600;
+    font-weight: bold;
+    transition-duration: 0.5s;
 }
+
 .topo a:hover{
-    color: #004b4c;
+    background-color: #ECBE2A;
+    color: #24303d;
+    border-radius: 5px;
 }
+
 .topo .container{
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
     min-height: 60px;
-    padding: 0 10px;
-    margin: 0 auto;
 }
+
 footer{
-    background-color: #0d6e71;
+    background-color: #435A73;
     color: #fff;
     padding: 20px;
 }
+
 footer .container{
     text-align: center;
 }
+
 .box-apresentacao{
     background-image: url('../Imagens/banner.png');
     background-repeat: no-repeat;
@@ -69,9 +81,11 @@ footer .container{
     font-size: 2.35rem;
     margin:0;
 }
+
 .box-texto span{
     font-weight: bold;
 }
+
 .box-sobre{
     display: flex;
     align-items: center;
@@ -81,19 +95,23 @@ footer .container{
 .box-sobre h3{
     font-weight: 500;
 }
+
 .box-especialidades{
     display: flex;
     flex-wrap: wrap;
 }
+
 .box-especialidade{
     border-radius: 3px;
     box-shadow: 0px 1px 10px rgb(0 0 0 / 50%);
     margin: 20px;
     width: calc(100% / 3 - 40px);
 }
+
 .box-especialidade img{
     width: 100%;
 }
+
 .box-especialidade figcaption{
     text-align: center;
     padding: 10px;
