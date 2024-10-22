@@ -62,8 +62,13 @@ li {
     align-items: center;
 }
 
+button.update {
+    background-color: green;
+}
+
 button.delete {
-    background-color: #dc3545;
+    background-color: red;
+    
 }
 
 button.edit {
