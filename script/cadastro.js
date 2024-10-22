@@ -49,7 +49,6 @@ async function cadastro(){
 
             // Error Tratado
             let errorMessage = errorData.data.errors;
-            console.log(errorMessage)
             
             // Tratamento de erro do cpf
             if (errorMessage.cpf_cnpj) {
@@ -72,10 +71,8 @@ async function fomatarCPFCNPJ(input) {
 
     if (cpf_cnpj.length === 11) {
         cpf_cnpj = cpf_cnpj.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
-        console.log(cpf_cnpj)
     } else if (cpf_cnpj.length === 14) {
             cpf_cnpj = cpf_cnpj.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, '$1.$2.$3/$4-$5');
-            console.log(cpf_cnpj)
     }
     input.value = cpf_cnpj;
 }

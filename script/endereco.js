@@ -223,21 +223,13 @@ async function completeAddress(cep) {
     }
 }
 
-
-function teste (input) {
-    console.log(input.value)
-    console.log(input)
-}
-
 function adicionarEnderecoNaLista(enderecos) {
     const listaEnderecos = document.getElementById('listaEnderecos');
     
     listaEnderecos.innerHTML = '';
-    console.log(enderecos)
     for (let i = 0; i < enderecos.length; i++) {
         let endereco = enderecos[i];
         const li = document.createElement('li');
-        console.log(endereco)
         li.innerHTML = `
         ${endereco.title}: ${endereco.address}, ${endereco.number} - ${endereco.cep} 
         <div>
