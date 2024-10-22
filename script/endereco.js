@@ -1,7 +1,5 @@
 const url = 'https://go-wash-api.onrender.com/api/auth/address';
 
-const runner = getEndereco() ? 1 : 0;
-
 async function addEndereco(){
     let enderecoButton = document.getElementById('endereco-button');
     enderecoButton.disabled = true;
@@ -242,8 +240,11 @@ function adicionarEnderecoNaLista(enderecos) {
         console.log(endereco)
         li.innerHTML = `
         ${endereco.title}: ${endereco.address}, ${endereco.number} - ${endereco.cep} 
-        <button class="update" id="endereco-put-${endereco.id}" onclick="putEndereco(${endereco.id})">Atualizar</button>
-        <button class="delete" id="endereco-del-${endereco.id}" onclick="delEndereco(${endereco.id})">Deletar</button>`;
+        <div>
+            <button class="update" id="endereco-put-${endereco.id}" onclick="putEndereco(${endereco.id})">Atualizar</button>
+            <button class="delete" id="endereco-del-${endereco.id}" onclick="delEndereco(${endereco.id})">Deletar</button>
+        </div>
+        `;
         listaEnderecos.appendChild(li);
     };
 }

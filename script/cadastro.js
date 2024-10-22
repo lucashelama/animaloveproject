@@ -43,6 +43,7 @@ async function cadastro(){
         if (responseApi.ok) {
             let data = await responseApi.json();
             alert("Cadastro Realizado com Sucesso");
+            window.location.replace("login.html");
         } else {
             let errorData = await responseApi.json();
 
