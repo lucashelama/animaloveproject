@@ -51,8 +51,7 @@ async function addEndereco(){
         if (responseApi.ok) {
             let data = await responseApi.json();
             alert('Endereço adicionado com sucesso!');
-            // getEndereco();
-            window.location.replace("../index.html");
+            getEndereco();
             return;
         } else {
             let errorData = await responseApi.json();
@@ -67,8 +66,6 @@ async function addEndereco(){
 }
 
 async function getEndereco() {
-    let enderecoButton = document.getElementById('endereco-get');
-    enderecoButton.disabled = true;
     try {
         let token = await getToken()
         if (!token) {
@@ -93,13 +90,11 @@ async function getEndereco() {
     } catch (error) {
         console.log("Erro na requisição:", error);
         alert("Erro inesperado. Tente novamente mais tarde.");
-    } finally {
-        enderecoButton.disabled = false;
     }
 }
 
-async function delEndereco() {
-    let enderecoButton = document.getElementById("endereco-del");
+async function delEndereco(id) {
+    let enderecoButton = document.getElementById(`endereco-del-${id}`);
     enderecoButton.disabled = false;
     try {
         let token = await getToken()
@@ -118,7 +113,7 @@ async function delEndereco() {
         })
         console.log(responseApi);
         let data = await responseApi.json();
-        console.log(data)
+        console.log(data);
 
     } catch (error) {
         console.log("Erro na requisição:", error);
@@ -128,8 +123,8 @@ async function delEndereco() {
     }
 }
 
-async function putEndereco() {
-    let enderecoButton = document.getElementById("endereco-put");
+async function putEndereco(id) {
+    let enderecoButton = document.getElementById(`endereco-put-${id}`);
     enderecoButton.disabled = true;
 
     try {
@@ -156,7 +151,7 @@ async function putEndereco() {
 
         let index = document.getElementById('index-put').value;
 
-        let token = await getToken()
+        let token = await getToken();
         if (!token) {
             return;
         }
@@ -192,7 +187,7 @@ async function getToken() {
 
     if (!token) {
         alert('Você precisa fazer o login novamente para continuar com a operação');
-        window.location.replace("login.html")
+        window.location.replace("login.html");
         return;
     }
     return token;
@@ -237,7 +232,8 @@ function adicionarEnderecoNaLista(enderecos) {
         const li = document.createElement('li');
         li.innerHTML = `
         ${endereco.title}: ${endereco.address}, ${endereco.number} - ${endereco.cep} 
-        <button class="delete" onclick="deletarEndereco()">Deletar</button>`;
+        <button class="update" id="endereco-put-${endereco.id}" onclick="putEndereco(${endereco.id})">Atualizar</button>
+        <button class="delete" id="endereco-del-${endereco.id}" onclick="delEndereco(${endereco.id})">Deletar</button>`;
         listaEnderecos.appendChild(li);
     };
 }
