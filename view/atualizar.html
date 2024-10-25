@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Endereços</title>
+    <link rel="stylesheet" href="../css/atualizar.css">
+</head>
+<body>
+    <a href="./home.html"
+    style="background-color: #435A73; color: white; padding: 15px 32px; text-align: center; font-weight: bold; text-decoration: none; display:inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer; border: none; border-radius: 4px; transition: background-color 0.3s;" 
+    onmouseover="this.style.backgroundColor='#ECBE2A'"
+    onmouseout="this.style.backgroundColor='#435A73'">
+    Voltar
+    </a>
+    <div class="container">
+        <h1>Atualiar Endereço</h1>
+
+        <form id="enderecoForm">
+            <label for="title">Título:</label>
+            <input type="text" id="title" name="title" required>
+
+            <label for="cep">CEP:</label>
+            <input type="text" id="cep" name="cep" required oninput="formatarCep(this)">
+
+            <label for="address">Endereço:</label>
+            <input type="text" id="address" name="address" readonly>
+
+            <label for="number">Número:</label>
+            <input type="text" id="number" name="number" required>
+
+            <label for="complement">Complemento:</label>
+            <input type="text" id="complement" name="complement">
+
+            <button type="button" id="endereco-button" onclick="updateEndereco()">Atualizar Endereço</button>
+        </form>
+    </div>
+
+    <script src="../script/atualizar.js"></script>
+</body>
+</html>
