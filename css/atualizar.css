@@ -5,6 +5,27 @@ body {
     padding: 0;
 }
 
+a {
+    background-color: #435A73;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s; 
+
+}
+
+a:hover {
+    background-color: #ECBE2A;
+}
+
 .container {
     width: 50%;
     margin: 0 auto;

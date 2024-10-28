@@ -6,17 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
 </head>
-<body>
+<body onload="getEndereco()">
+    <div>
     <table id="endereco-table" >
-        <tr>
-            <th>Titulo</th>
-            <th>Endereço</th>
-            <th>Numero</th>
-            <th>CEP</th>
-            <th>Button</th>
-        </tr>
-    </table><br>
-    <input type="button" value="Clica" onclick="getEndereco()">
+        <tbody id="table-body">
+            <tr>
+                <th class="button"></th>
+                <th class="title">Titulo</th>
+                <th class="address" id="address-th">Endereço</th>
+                <th class="number">Numero</th>
+                <th class="cep">CEP</th>
+                <th class="complement" id="complement-th">Complemento</th>
+                
+            </tr>
+        </tbody>
+    </table>
+    </div>
     
     <script src="../script/home.js"></script>
 </body>
