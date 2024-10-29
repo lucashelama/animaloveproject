@@ -2,7 +2,7 @@ const url = 'https://go-wash-api.onrender.com/api/auth/address';
 
 async function getEndereco() {
     try {
-        let token = await getToken()
+        let token = await getToken();
         if (!token) {
             return;
         }
@@ -35,13 +35,13 @@ function addTable(enderecos) {
 
         row = `
         <tr id="tr-${endereco.id}">
-            <td class="button"><button class="update" id="endereco-put-${endereco.id}" onclick="putEndereco(${endereco.id})">Atualizar</button>
-            <button class="delete" id="endereco-del-${endereco.id}" onclick="delEndereco(${endereco.id})">Deletar</button></td>
             <td class="title">${endereco.title}</td>
             <td class="address">${endereco.address}</td>
             <td class="number">${endereco.number}</td>
             <td class="cep">${endereco.cep}</td>
             <td class="complement">${endereco.complement ? endereco.complement : ""}</td>
+            <td class="button"><button class="update" id="endereco-put-${endereco.id}" onclick="putEndereco(${endereco.id})">Atualizar</button>
+            <button class="delete" id="endereco-del-${endereco.id}" onclick="delEndereco(${endereco.id})">Deletar</button></td>
         </tr>
         `
         tabela.innerHTML += row
@@ -51,7 +51,7 @@ function addTable(enderecos) {
 
 async function delEndereco(id) {
     let enderecoButton = document.getElementById(`endereco-del-${id}`);
-    enderecoButton.disabled = false;
+    enderecoButton.disabled = true;
     
     try {
         let token = await getToken()

@@ -1,10 +1,51 @@
 const url = 'https://go-wash-api.onrender.com/api/auth/address';
 
-async function updateEndereco() {
+async function getEndereco() {
     let enderecoButton = document.getElementById("endereco-button");
     enderecoButton.disabled = true;
     enderecoButton.style.backgroundColor="#0056b3";
 
+    try {
+        let token = await getToken()
+        if (!token) {
+            return;
+        }
+
+        let id = await getId();
+        if (!id) {
+            return;
+        }
+
+        let responseApi = await fetch(`${url}/${id}`, {
+            method: "GET",
+            headers: {
+                'Content-Type':'application/json',
+                'Authorization': `Bearer ${token}`
+            }
+        })
+
+        if (responseApi.ok) {
+            let data = await responseApi.json();
+            formatarPainel(data.data)
+        } else {
+            let errorData = await responseApi.json();
+            alert(errorData.data.errors)
+        }
+        
+    } catch (error) {
+        console.log("Erro na requisição:", error);
+        alert("Erro inesperado. Tente novamente mais tarde.");
+    } finally {
+        enderecoButton.disabled = false;
+        enderecoButton.style.backgroundColor="#007BFF";
+    }
+
+}
+
+async function updateEndereco() {
+    let enderecoButton = document.getElementById("endereco-button");
+    enderecoButton.disabled = true;
+    enderecoButton.style.backgroundColor="#0056b3";
 
     try{
         let title = document.getElementById('title').value;
@@ -71,6 +112,24 @@ async function updateEndereco() {
         enderecoButton.disabled = false;
         enderecoButton.style.backgroundColor="#007BFF";
     }
+}
+
+function formatarPainel(endereco) {
+    console.log(endereco)
+
+    let title = document.getElementById('title');
+    let cep = document.getElementById('cep');
+    let address = document.getElementById('address');
+    let number = document.getElementById('number');
+    let complement = document.getElementById('complement');
+
+    title.value = endereco.title;
+    cep.value = endereco.cep.replace(/(\d{5})(\d{3})/, '$1-$2');
+    address.value = endereco.address;
+    number.value = endereco.number;
+    complement.value = endereco.complement ? endereco.complement : "";
+
+    return;
 }
 
 async function getToken() {
