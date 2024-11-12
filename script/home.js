@@ -1,4 +1,42 @@
 const url = 'https://go-wash-api.onrender.com/api/auth/address';
+const urlLogout = 'https://go-wash-api.onrender.com/api/auth/logout'
+
+async function logout() {
+    let logoutButton = document.getElementById(`logout`);
+    logoutButton.disabled = true;
+
+    try {
+        let token = await getToken();
+        if (!token) {
+            return;
+        }
+
+        let responseApi = await fetch(urlLogout, {
+            method: "POST",
+            headers: {
+                'Content-Type':'application/json',
+                'Authorization': `Bearer ${token}`
+            }
+        })
+
+
+        if (responseApi.ok) {
+            let data = await responseApi.json();
+            localStorage.removeItem("token");
+            alert(data.data);
+            window.location.replace("../index.html");
+
+        } else {
+            let errorData = await responseApi.json();
+            alert(errorData.data.error)
+        }
+    } catch (error) {
+        console.log("Erro na requisição:", error);
+        alert("Erro inesperado. Tente novamente mais tarde.");
+    } finally {
+        logoutButton.disabled = false;
+    }
+}
 
 async function getEndereco() {
     try {

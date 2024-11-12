@@ -29,7 +29,7 @@ async function login(){
             let data = await responseApi.json();
             localStorage.setItem('token', data.access_token);
             alert('Login feito com sucesso');
-            window.location.replace("endereco.html");
+            window.location.replace("home.html");
         } else{
             let errorData = await responseApi.json();
             alert(errorData.data.errors);

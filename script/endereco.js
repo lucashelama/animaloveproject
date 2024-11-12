@@ -106,21 +106,3 @@ async function completeAddress(cep) {
         return null;
     }
 }
-
-function adicionarEnderecoNaLista(enderecos) {
-    const listaEnderecos = document.getElementById('listaEnderecos');
-    
-    listaEnderecos.innerHTML = '';
-    for (let i = 0; i < enderecos.length; i++) {
-        let endereco = enderecos[i];
-        const li = document.createElement('li');
-        li.innerHTML = `
-        ${endereco.title}: ${endereco.address}, ${endereco.number} - ${endereco.cep} 
-        <div>
-            <button class="update" id="endereco-put-${endereco.id}" onclick="putEndereco(${endereco.id})">Atualizar</button>
-            <button class="delete" id="endereco-del-${endereco.id}" onclick="delEndereco(${endereco.id})">Deletar</button>
-        </div>
-        `;
-        listaEnderecos.appendChild(li);
-    };
-}

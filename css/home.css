@@ -6,6 +6,7 @@ table, td {
   border: 1px solid rgb(0, 0, 0);
   border-collapse: collapse;
   width: 100%;
+  font-family: Arial, sans-serif;
 }
 
 /*
@@ -13,6 +14,7 @@ Style por Linhas da Tabela
 */
 tr {
   text-align: center;
+  font-family: Arial, sans-serif;
 }
 
 tr:nth-child(even) {
@@ -35,6 +37,7 @@ th {
   border-collapse: collapse;
   height: 25px;
   font-size: 17px;
+  font-family: Arial, sans-serif;
 }
 
 
@@ -90,19 +93,76 @@ button {
   margin: 2%;
   padding: 10px;
   background-color: #03c403;
+  transition: background-color 0.3s;
 }
 button.update:hover {
   background-color: #039203;
   color: whitesmoke;
 }
 
-
 .delete {
   margin: 2%;
   padding: 10px;
   background-color: #ff0000;
+  transition: background-color 0.3s;
 }
 button.delete:hover {
   background-color: #cf0404;
   color: whitesmoke;
+}
+
+.default {
+  background-color: #435a73;
+  color: white;
+  padding: 15px 32px;
+  background-color: #435a73;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  text-decoration: none; 
+  display:inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border: none; 
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+.default:nth-child(even) {
+  background-color: #435a73;
+}
+.default:hover {
+  background-color: #ECBE2A;
+  color: black;
+}
+
+#voltar {
+  margin: 10px 0px;
+  margin-top: 0%;
+}
+
+#logout {
+  margin: 10px 0px;
+  margin-top: 0%;
+  margin-left: 1%;
+}
+
+
+
+#add-endereco {
+  margin: 10px 0px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0%);
+
+}
+
+#add-endereco:nth-child(even) {
+  background-color: #435a73;
+}
+
+#add-endereco:hover {
+  background-color: #ECBE2A;
+  color: black;
 }

@@ -8,18 +8,27 @@
 </head>
 <body onload="getEndereco()">
     <div>
-    <table id="endereco-table" >
-        <tbody id="table-body">
-            <tr>
-                <th class="title">Titulo</th>
-                <th class="address" id="address-th">Endereço</th>
-                <th class="number">Numero</th>
-                <th class="cep">CEP</th>
-                <th class="complement" id="complement-th">Complemento</th>
-                <th class="button"></th>
-            </tr>
-        </tbody>
-    </table>
+        <a class="default" id="voltar" href="../index.html">
+        Voltar
+        </a>
+        <button class="default" id="logout" onclick="logout()">
+            Sair
+        </button>
+        <table id="endereco-table" >
+            <tbody id="table-body">
+                <tr>
+                    <th class="title">Titulo</th>
+                    <th class="address" id="address-th">Endereço</th>
+                    <th class="number">Numero</th>
+                    <th class="cep">CEP</th>
+                    <th class="complement" id="complement-th">Complemento</th>
+                    <th class="button"></th>
+                </tr>
+            </tbody>
+        </table>
+        <a class="default" id="add-endereco" href="./endereco.html">
+        + Adicionar novo Endereco
+        </a>
     </div>
     
     <script src="../script/home.js"></script>
